@@ -1,0 +1,14 @@
+<po-page-dynamic-table
+  p-title="Ambientes"
+  [p-page-custom-actions]="pageCustomActions"
+  [p-table-custom-actions]="tableCustomActions"
+  [p-breadcrumb]="breadcrumb"
+  [p-fields]="fields"
+  [p-service-api]="serviceApi"
+  [p-quick-search-width]="quickSearchWidth"
+  [p-load]="onLoad.bind(this)"
+>
+</po-page-dynamic-table>
+<po-modal #envDetailModal p-title="Detalhes do ambiente">
+  <po-dynamic-view [p-fields]="detailFields" [p-value]="detailedEnvs"> </po-dynamic-view>
+</po-modal>

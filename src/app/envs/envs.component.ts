@@ -1,7 +1,5 @@
 import { Component, ViewChild } from '@angular/core';
 
-import { PoMenuItem } from '@po-ui/ng-components';
-
 import { PoBreadcrumb, PoDynamicViewField, PoModalComponent } from '@po-ui/ng-components';
 import {
   PoPageDynamicTableActions,
@@ -9,19 +7,16 @@ import {
   PoPageDynamicTableCustomTableAction,
   PoPageDynamicTableOptions
 } from '@po-ui/ng-templates';
+// import { SamplePoPageDynamicTableUsersService } from './envs.component.service';
 
 @Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  selector: 'app-envs',
+  templateUrl: './envs.component.html',
+  styleUrls: ['./envs.component.css']
 })
-export class AppComponent {
-  @ViewChild('envDetailModal') envDetailModal!: PoModalComponent;
 
-  readonly menus: Array<PoMenuItem> = [
-    { label: 'Home', link: "" },
-    // { label: 'Envs', link: 'envs' }
-  ];
+export class EnvsComponent {
+  @ViewChild('envDetailModal') envDetailModal!: PoModalComponent;
 
   readonly serviceApi = 'http://127.0.0.1:3333/envs';
   detailedEnvs: any;
@@ -34,7 +29,7 @@ export class AppComponent {
   // };
 
   readonly breadcrumb: PoBreadcrumb = {
-    items: [{ label: 'Home', link: '/' }]
+    items: [{ label: 'Home', link: '/' }, { label: 'Envs' }]
   };
 
 
@@ -78,5 +73,4 @@ export class AppComponent {
 
     this.envDetailModal.open();
   }
-
 }
