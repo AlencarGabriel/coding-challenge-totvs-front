@@ -1,0 +1,20 @@
+version: "3.5"
+
+networks: 
+    app_network:
+        name: 'app_front'
+        driver: bridge
+services:
+    app:
+        container_name: app_ui
+        build: .
+        image: coding-challenge-totvs-front
+        command: npm start
+        ports:
+            - "4200:4200"
+        volumes:
+            - .:/usr/app
+            #Isso exclui o node_modules local e utiliza o instalado no container
+            - /usr/app/node_modules
+        networks: 
+            - app_network
